@@ -42,11 +42,7 @@ public class SimpleDeadLock {
         while (a.getState() != Thread.State.TERMINATED && b.getState() != Thread.State.TERMINATED) {
             System.out.println("Thread A state is " + a.getState());
             System.out.println("Thread B state is " + b.getState());
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            sleep(1);
         }
     }
 
